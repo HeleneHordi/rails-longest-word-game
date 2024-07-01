@@ -1,0 +1,12 @@
+<div class="container">
+<h1>Résultat</h1>
+  <p>Votre mot : <strong><%= @word %></strong></p>
+  <p>Les lettres : <%= @letters.join(" ") %></p>
+<% if @included %>
+  <% if @english_word %>
+    <div class="alert alert-success">Félicitations <%= @word %> est un mot anglais.</div>
+  <% else %>
+    <div class="alert alert-warning">Votre mot <%= @word %> n'est pas un mot anglais.</div>
+  <% end %>
+<% end %>
+<%= link_to 'Nouvelle partie', new_path %>
